@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.fragment_splash)
+
         Handler(Looper.myLooper()!!).postDelayed({
             setContentView(mBinding.root)
             bottom_nav_menu.setupWithNavController(
