@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         CoroutineScope(Dispatchers.Main).launch {
             binding = ActivityMainBinding.inflate(layoutInflater)
             setContentView(mBinding.root)

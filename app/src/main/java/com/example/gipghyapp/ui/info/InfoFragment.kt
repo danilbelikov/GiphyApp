@@ -34,5 +34,6 @@ class InfoFragment : Fragment() {
             mBinding.ratingText.text = "ID: " + response.id
             Toast.makeText(requireContext(), response.toString(), Toast.LENGTH_SHORT).show()
         }
+
     }
 }

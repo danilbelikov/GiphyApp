@@ -40,22 +40,9 @@ class GifsAdapter(val itemClickListener: (Data) -> Unit): RecyclerView.Adapter<G
     override fun onBindViewHolder(holder: GifsViewHolder, position: Int) {
         val gif = differ.currentList[position]
         holder.itemView.apply {
-//            val imageLoader = ImageLoader.Builder(context)
-//                .components {
-//                    if (SDK_INT >= 28) {
-//                        add(ImageDecoderDecoder.Factory())
-//                    } else {
-//                        add(GifDecoder.Factory())
-//                    }
-//                }
-//                .build()
-//            ivGif.load(gif.url, imageLoader){
-//                placeholder(R.drawable.ic_home)
-//                error(R.drawable.ic_home)
-//            }
-//            Glide.with(this).asBitmap().load("https://media2.giphy.com/media/SggILpMXO7Xt6/200w.gif?cid=586aac78go77joev6h9rti1s7vf5h86o1wpjycceydj0eh2k&rid=200w.gif&ct=g")
+
             Glide.with(this).asGif().load(gif.images.original.url)
-                .placeholder(R.drawable.ic_home).error(R.drawable.ic_home).into(ivGif)
+                .placeholder(com.google.android.material.R.drawable.navigation_empty_icon).error(com.google.android.material.R.drawable.navigation_empty_icon).into(ivGif)
             ivGif.clipToOutline = true
 
             ivGif.setOnClickListener {
