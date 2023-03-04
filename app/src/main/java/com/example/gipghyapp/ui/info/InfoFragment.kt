@@ -29,8 +29,9 @@ class InfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.shared.observe(viewLifecycleOwner) { response ->
-            mBinding.test.text = response.title
-            mBinding.ratingText.text = "Имя пользователя:" + response.username
+            mBinding.title.text = response.title
+            mBinding.name.text = "Имя пользователя: " + response.username
+            mBinding.ratingText.text = "ID: " + response.id
             Toast.makeText(requireContext(), response.toString(), Toast.LENGTH_SHORT).show()
         }
     }
