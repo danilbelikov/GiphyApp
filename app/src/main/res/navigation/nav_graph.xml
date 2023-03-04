@@ -11,6 +11,7 @@
         android:label="fragment_info"
         tools:layout="@layout/fragment_info"
         />
+
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.gipghyapp.ui.search.SearchFragment"

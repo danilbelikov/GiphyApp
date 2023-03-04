@@ -8,10 +8,9 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface GiphyService {
-    @GET("v1/gifs/search?q=funny&api_key=Do4NnwLBABhq1ArW32E6SnImzKuLf98I")
-
+    @GET("v1/gifs/search")
     suspend fun getSearch(
-        @Query("q") query: String = "funny",
+        @Query("q") query: String,
         @Query("limit") limit: Int = 25,
         @Query("apiKey") apiKey: String = API_KEY
     ): Response<GiphyResponse2>

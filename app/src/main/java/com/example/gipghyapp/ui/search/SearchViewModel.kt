@@ -12,17 +12,17 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SearchViewModel @Inject constructor(private val repository: TestRepo): ViewModel() {
+class SearchViewModel @Inject constructor(private val repository: TestRepo) : ViewModel() {
     private val _all = MutableLiveData<GiphyResponse2>()
     val all: LiveData<GiphyResponse2>
-    get() = _all
+        get() = _all
 
     init {
-        getAll()
+        getAll("")
     }
 
-    fun getAll() = viewModelScope.launch {
-        repository.getAll().let {
+    fun getAll(q:String) = viewModelScope.launch {
+        repository.getAllSearch(q).let {
             if (it.isSuccessful) {
                 _all.postValue(it.body())
             } else {
